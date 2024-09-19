@@ -14,7 +14,6 @@ export const AppContext = ({ children }) => {
     try {
       const res = await fetchApiForYoutubeData("videos", params);
       setVideoData(res.items);
-      console.log(res.items);
     } catch (error) {
       console.error(error, "error fetching data");
     } finally {
@@ -29,8 +28,8 @@ export const AppContext = ({ children }) => {
       part: "snippet,contentDetails,statistics",
       chart: "most-popular",
       regionCode: "IN",
-      maxResults: 10,
-      ...(selectedCategory !== "Home" && { videoCategoryId: selectedCategory }),
+      maxResults: 50,
+      ...(selectedCategory !== "0" && { videoCategoryId: selectedCategory }),
     };
 
     fetchYoutubeData(params);

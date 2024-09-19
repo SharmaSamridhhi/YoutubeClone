@@ -1,6 +1,6 @@
 import axios from "axios";
 const Base_URL = "https://www.googleapis.com/youtube/v3";
-const API_KEY = "AIzaSyAR8_ZPd8nLO9brfwC2heEgGtj3n7vZQys";
+const API_KEY = "AIzaSyBWmJSm21rWI6823I_RL032Ll1W1QKlVuY";
 
 export const fetchApiForYoutubeData = async (
   endpoints,
@@ -13,7 +13,7 @@ export const fetchApiForYoutubeData = async (
         key: API_KEY,
       },
     });
-    console.log(`this is the response : ${response.data}`);
+
     return response.data;
   } catch (error) {
     console.error(error, "error fetching youtube data");
