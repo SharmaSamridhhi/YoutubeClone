@@ -12,12 +12,24 @@ import { MdVideoCall } from "react-icons/md";
 import { FaBell } from "react-icons/fa";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { FiMoon, FiSun } from "react-icons/fi";
+import useSpeechRecognitions from "../../useContextHook/useSpeechRecognition";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { loading, mobileMenu, setMobileMenu } = useAppContext();
   const { toggleTheme, isDarkMode } = useTheme();
   const navigate = useNavigate();
+
+  const {
+    listening,
+    startListening,
+    stopListening,
+    browserSupportsSpeechRecognition,
+  } = useSpeechRecognitions(setSearchQuery);
+
+  if (!browserSupportsSpeechRecognition) {
+    return <span>Browser doesn't support speech recognition.</span>;
+  }
 
   const handleSearchQuery = () => {
     if (searchQuery?.length > 0) {
@@ -94,7 +106,7 @@ const Header = () => {
           />
           {searchQuery && (
             <button
-              className='absolute right-32 top-1/2 transform -translate-y-1/2'
+              className='absolute right-24 md:right-32 top-1/2 transform -translate-y-1/2'
               onClick={handleClearSearchQuery}
             >
               <CgClose className='text-xl' />
@@ -113,10 +125,20 @@ const Header = () => {
         <button
           className={`flex items-center justify-center w-[40px] md:w-[60px] h-8 md:h-10 rounded-full hover:bg-${
             isDarkMode ? "gray-700" : "gray-300"
-          }`}
+          } ml-2`}
+          onClick={() => {
+            if (listening) {
+              stopListening();
+            } else {
+              startListening();
+            }
+          }}
         >
-          {/* <IoMdMicOff className='text-xl' /> */}
-          <IoMdMic className='text-xl' />
+          {listening ? (
+            <IoMdMicOff className='text-xl' />
+          ) : (
+            <IoMdMic className='text-xl' />
+          )}
         </button>
       </div>
       <div className='flex items-center space-x-2 md:space-x-4'>
