@@ -30,3 +30,4 @@ This project is a **YouTube clone** web application built using **React**. It ai
 <img width="1437" alt="Screenshot 2024-10-19 at 6 23 06 PM" src="https://github.com/user-attachments/assets/9ae4c465-80f6-4f29-936a-936a3b4da99f">
 
 
+<img width="1440" alt="Screenshot 2024-10-19 at 7 42 56 PM" src="https://github.com/user-attachments/assets/f4b519b1-e3ca-42ea-acb1-d94c213658b0">
