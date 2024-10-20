@@ -12,6 +12,7 @@ This project is a **YouTube clone** web application built using **React**. It ai
 
 - **🔍 Video Search**: Users can search for videos using the YouTube API, displaying a list of relevant video results.
 - **📺 Video Player**: Clicking on a video thumbnail opens the video player, allowing users to watch videos within the app.
+- **🎤 Voice Search**: Allows users to search for videos by speaking directly into the app.
 - **🎞️ Related Videos**: The app dynamically fetches and displays related videos based on the currently selected video.
 - **💬 Comments Section**: Fetches and displays comments from the YouTube API for a given video.
 - **📱 Responsive Design**: The UI is fully responsive and optimized for various screen sizes.
