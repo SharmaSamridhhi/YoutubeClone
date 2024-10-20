@@ -24,7 +24,7 @@ This project is a **YouTube clone** web application built using **React**. It ai
 - **YouTube Data API v3**: Used for fetching video data, related videos, and comments.
 - **React Router**: For handling in-app navigation.
 - **Axios**: For making API requests.
-- **CSS3**: For styling and layout.
+- **Tailwind CSS**: Utility-first CSS framework for styling and layout.
 
   
 <img width="1440" alt="Screenshot 2024-10-19 at 6 22 23 PM" src="https://github.com/user-attachments/assets/16288be4-19a0-49f8-b5ed-4887b316d255">
